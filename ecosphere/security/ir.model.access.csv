@@ -1,5 +1,4 @@
-id,name,model_id:id,group_id,perm_read,perm_write,perm_create,perm_unlink
-
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ecosphere_environmental,ecosphere.environmental,model_ecosphere_environmental,base.group_user,1,1,1,1
 access_ecosphere_social,ecosphere.social,model_ecosphere_social,base.group_user,1,1,1,1
 access_ecosphere_governance,ecosphere.governance,model_ecosphere_governance,base.group_user,1,1,1,1

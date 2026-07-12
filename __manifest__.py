@@ -11,7 +11,7 @@
         through gamification, and maintain governance compliance.
     """,
 
-    'author': 'PM',
+    'author': ' Kush Patel,Parva Mehta' ,
 
     'depends': [
         'base',
@@ -19,13 +19,19 @@
     ],
 
     'data': [
+        # Security
         'security/ir.model.access.csv',
 
+        # Initial Data
+        'data/badge_data.xml',
+        'data/reward_data.xml',
+
+        # Views
         'views/menu.xml',
-        'views/environmental_views.xml',
-        'views/social_views.xml',
-        'views/governance_views.xml',
-        'views/gamification_views.xml',
+        'views/environmental_view.xml',
+        'views/social_view.
+        'views/governance_view.xml',
+        'views/gamification_view.xml',
     ],
 
     'installable': True,

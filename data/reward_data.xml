@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <!-- Reward 1 -->
+    <record id="reward_eco_tshirt" model="ecosphere.reward">
+        <field name="name">Eco-Friendly T-Shirt</field>
+        <field name="description">
+            Sustainable cotton T-shirt for employees who achieve green goals.
+        </field>
+        <field name="points_required">500</field>
+        <field name="stock_status">in_stock</field>
+    </record>
+
+
+    <!-- Reward 2 -->
+    <record id="reward_tree_planting" model="ecosphere.reward">
+        <field name="name">Plant a Tree</field>
+        <field name="description">
+            Sponsor a tree plantation as a sustainability reward.
+        </field>
+        <field name="points_required">1000</field>
+        <field name="stock_status">in_stock</field>
+    </record>
+
+
+    <!-- Reward 3 -->
+    <record id="reward_green_certificate" model="ecosphere.reward">
+        <field name="name">Green Champion Certificate</field>
+        <field name="description">
+            Certificate awarded for outstanding ESG contributions.
+        </field>
+        <field name="points_required">300</field>
+        <field name="stock_status">in_stock</field>
+    </record>
+
+
+    <!-- Reward 4 -->
+    <record id="reward_sustainability_workshop" model="ecosphere.reward">
+        <field name="name">Sustainability Workshop Pass</field>
+        <field name="description">
+            Free access to an environmental awareness workshop.
+        </field>
+        <field name="points_required">750</field>
+        <field name="stock_status">out_of_stock</field>
+    </record>
+
+</odoo>

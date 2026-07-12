@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- 1. ACTION: Link to the Gamification Challenge model -->
-    <record id="action_gamification_challenge" model="ir.actions.act_window">
-        <field name="name">Challenges</field>
-        <field name="res_model">ecosphere.gamification.challenge</field>
+    <record id="action_carbon_transaction" model="ir.actions.act_window">
+        <field name="name">Carbon Transactions</field>
+        <field name="res_model">ecosphere.carbon.transaction</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- 2. MENU ITEM: Place it under the 'Gamification' top menu -->
-    <menuitem id="menu_gamification_challenge" 
-              name="Challenges" 
-              parent="menu_gamification" 
-              action="action_gamification_challenge" 
+    <menuitem id="menu_carbon_tx" 
+              name="Carbon Tracker" 
+              parent="menu_environmental" 
+              action="action_carbon_transaction" 
               sequence="10"/>
 
-    <!-- 3. TREE VIEW -->
-    <record id="view_gamification_challenge_tree" model="ir.ui.view">
-        <field name="name">ecosphere.gamification.challenge.tree</field>
-        <field name="res_model">ecosphere.gamification.challenge</field>
+    <record id="view_carbon_transaction_tree" model="ir.ui.view">
+        <field name="name">ecosphere.carbon.transaction.tree</field>
+        <field name="res_model">ecosphere.carbon.transaction</field>
         <field name="arch" type="xml">
-            <tree string="Challenges">
+            <tree string="Carbon Transactions">
                 <field name="name"/>
-                <field name="start_date"/>
-                <field name="end_date"/>
-                <field name="reward_points"/>
+                <field name="department_id"/>
+                <field name="date"/>
+                <field name="quantity"/>
+                <field name="calculated_carbon"/>
             </tree>
         </field>
     </record>
 
-    <!-- 4. FORM VIEW -->
-    <record id="view_gamification_challenge_form" model="ir.ui.view">
-        <field name="name">ecosphere.gamification.challenge.form</field>
-        <field name="res_model">ecosphere.gamification.challenge</field>
+    <record id="view_carbon_transaction_form" model="ir.ui.view">
+        <field name="name">ecosphere.carbon.transaction.form</field>
+        <field name="res_model">ecosphere.carbon.transaction</field>
         <field name="arch" type="xml">
-            <form string="Challenge">
+            <form string="Carbon Transaction">
                 <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="e.g. TX-2026-001"/>
+                        </h1>
+                    </div>
                     <group>
-                        <field name="name"/>
-                        <field name="start_date"/>
-                        <field name="end_date"/>
-                        <field name="reward_points"/>
+                        <group>
+                            <field name="department_id"/>
+                            <field name="date"/>
+                        </group>
+                        <group>
+                            <field name="emission_factor_id"/>
+                            <field name="quantity"/>
+                            <field name="calculated_carbon" readonly="1" force_save="1"/>
+                        </group>
                     </group>
                 </sheet>
             </form>

@@ -1,0 +1,35 @@
+/* ==========================================
+   EcoSphere Backend Theme
+   ========================================== */
+
+/* Green header text */
+.ecosphere-title {
+    color: #2E7D32;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Card styling */
+.ecosphere-card {
+    background-color: #ffffff;
+    border: 1px solid #d9e6d9;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 10px 0;
+}
+
+/* Highlight important ESG values */
+.ecosphere-highlight {
+    color: #1B5E20;
+    font-weight: bold;
+}
+
+/* Better spacing for forms */
+.o_form_view .o_group {
+    margin-bottom: 15px;
+}
+
+/* Light green page background */
+.o_form_view {
+    background-color: #f7fbf7;
+}

@@ -7,11 +7,12 @@
     'description': """
         EcoSphere ESG Management Platform
         =================================
-        A centralized application to track carbon emissions, promote employee participation 
-        through gamification, and maintain governance compliance.
+        A centralized application to track carbon emissions,
+        promote employee participation through gamification,
+        and maintain governance compliance.
     """,
 
-    'author': ' Kush Patel,Parva Mehta' ,
+    'author': 'Kush Patel, Parva Mehta',
 
     'depends': [
         'base',
@@ -29,10 +30,17 @@
         # Views
         'views/menu.xml',
         'views/environmental_view.xml',
-        'views/social_view.
+        'views/social_view.xml',
         'views/governance_view.xml',
         'views/gamification_view.xml',
     ],
+
+    'assets': {
+        'web.assets_backend': [
+            'ecosphere/static/src/css/ecosphere.css',
+            'ecosphere/static/src/js/dashboard.js',
+        ],
+    },
 
     'installable': True,
     'application': True,

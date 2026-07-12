@@ -1,55 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_carbon_transaction" model="ir.actions.act_window">
-        <field name="name">Carbon Transactions</field>
-        <field name="res_model">ecosphere.carbon.transaction</field>
+
+    <record id="action_environmental" model="ir.actions.act_window">
+        <field name="name">Environmental Data</field>
+        <field name="res_model">ecosphere.environmental</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_carbon_tx" 
-              name="Carbon Tracker" 
-              parent="menu_environmental" 
-              action="action_carbon_transaction" 
+
+    <menuitem id="menu_environmental_data"
+              name="Environmental Data"
+              parent="menu_environmental"
+              action="action_environmental"
               sequence="10"/>
 
-    <record id="view_carbon_transaction_tree" model="ir.ui.view">
-        <field name="name">ecosphere.carbon.transaction.tree</field>
-        <field name="res_model">ecosphere.carbon.transaction</field>
+
+    <record id="view_environmental_tree" model="ir.ui.view">
+        <field name="name">ecosphere.environmental.tree</field>
+        <field name="res_model">ecosphere.environmental</field>
         <field name="arch" type="xml">
-            <tree string="Carbon Transactions">
-                <field name="name"/>
-                <field name="department_id"/>
-                <field name="date"/>
-                <field name="quantity"/>
-                <field name="calculated_carbon"/>
+
+            <tree string="Environmental Data">
+                <field name="organization_name"/>
+                <field name="electricity_usage"/>
+                <field name="water_usage"/>
+                <field name="carbon_emission"/>
+                <field name="waste_generated"/>
+                <field name="reporting_year"/>
             </tree>
+
         </field>
     </record>
 
-    <record id="view_carbon_transaction_form" model="ir.ui.view">
-        <field name="name">ecosphere.carbon.transaction.form</field>
-        <field name="res_model">ecosphere.carbon.transaction</field>
+
+    <record id="view_environmental_form" model="ir.ui.view">
+        <field name="name">ecosphere.environmental.form</field>
+        <field name="res_model">ecosphere.environmental</field>
         <field name="arch" type="xml">
-            <form string="Carbon Transaction">
+
+            <form string="Environmental Data">
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="e.g. TX-2026-001"/>
-                        </h1>
-                    </div>
+
                     <group>
-                        <group>
-                            <field name="department_id"/>
-                            <field name="date"/>
-                        </group>
-                        <group>
-                            <field name="emission_factor_id"/>
-                            <field name="quantity"/>
-                            <field name="calculated_carbon" readonly="1" force_save="1"/>
-                        </group>
+                        <field name="organization_name"/>
+                        <field name="reporting_year"/>
                     </group>
+
+                    <group>
+                        <field name="electricity_usage"/>
+                        <field name="water_usage"/>
+                        <field name="carbon_emission"/>
+                        <field name="waste_generated"/>
+                    </group>
+
+                    <field name="remarks"/>
+
                 </sheet>
             </form>
+
         </field>
     </record>
+
 </odoo>

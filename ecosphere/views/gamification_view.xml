@@ -1,55 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="action_carbon_transaction" model="ir.actions.act_window">
-        <field name="name">Carbon Transactions</field>
-        <field name="res_model">ecosphere.carbon.transaction</field>
+
+    <record id="action_badge" model="ir.actions.act_window">
+        <field name="name">Badges</field>
+        <field name="res_model">ecosphere.badge</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_carbon_tx" 
-              name="Carbon Tracker" 
-              parent="menu_environmental" 
-              action="action_carbon_transaction" 
-              sequence="10"/>
 
-    <record id="view_carbon_transaction_tree" model="ir.ui.view">
-        <field name="name">ecosphere.carbon.transaction.tree</field>
-        <field name="res_model">ecosphere.carbon.transaction</field>
+    <menuitem id="menu_badge"
+              name="Badges"
+              parent="menu_gamification"
+              action="action_badge"/>
+
+
+    <record id="view_badge_tree" model="ir.ui.view">
+        <field name="name">ecosphere.badge.tree</field>
+        <field name="res_model">ecosphere.badge</field>
+
         <field name="arch" type="xml">
-            <tree string="Carbon Transactions">
+            <tree>
                 <field name="name"/>
-                <field name="department_id"/>
-                <field name="date"/>
-                <field name="quantity"/>
-                <field name="calculated_carbon"/>
+                <field name="unlock_rule"/>
             </tree>
         </field>
+
     </record>
 
-    <record id="view_carbon_transaction_form" model="ir.ui.view">
-        <field name="name">ecosphere.carbon.transaction.form</field>
-        <field name="res_model">ecosphere.carbon.transaction</field>
+
+    <record id="view_badge_form" model="ir.ui.view">
+        <field name="name">ecosphere.badge.form</field>
+        <field name="res_model">ecosphere.badge</field>
+
         <field name="arch" type="xml">
-            <form string="Carbon Transaction">
+
+            <form>
                 <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <field name="name" placeholder="e.g. TX-2026-001"/>
-                        </h1>
-                    </div>
                     <group>
-                        <group>
-                            <field name="department_id"/>
-                            <field name="date"/>
-                        </group>
-                        <group>
-                            <field name="emission_factor_id"/>
-                            <field name="quantity"/>
-                            <field name="calculated_carbon" readonly="1" force_save="1"/>
-                        </group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="unlock_rule"/>
+                        <field name="icon"/>
                     </group>
                 </sheet>
             </form>
+
         </field>
+
     </record>
+
+
+
+    <record id="action_reward" model="ir.actions.act_window">
+        <field name="name">Rewards</field>
+        <field name="res_model">ecosphere.reward</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_reward"
+              name="Rewards"
+              parent="menu_gamification"
+              action="action_reward"/>
+
+
 </odoo>

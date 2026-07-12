@@ -12,8 +12,13 @@
     'author': 'PM',
     'depends': ['base', 'mail'], 
     'data': [
-        'security/ir.model.access.csv',  
-        # 'views/organization_views.xml',  # Placeholders for Phase 4 UI work
+        'security/ir.model.access.csv', 
+        'views/menu.xml',
+        'views/environmental_view.xml',
+        'views/governance_view.xml',
+        'views/gamification_view.xml',
+        'views/social_view.xml' 
+       
     ],
     'installable': True,
     'application': True,

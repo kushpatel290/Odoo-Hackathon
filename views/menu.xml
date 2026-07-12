@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 1. The Root App Menu (Shows up in the main Odoo app switcher dashboard) -->
+    <menuitem id="menu_ecosphere_root" 
+              name="EcoSphere ESG" 
+              sequence="10"/>
+
+    <!-- 2. Top-level Categories (Top navigation bar inside the app) -->
+    <menuitem id="menu_environmental" 
+              name="Environmental" 
+              parent="menu_ecosphere_root" 
+              sequence="10"/>
+              
+    <menuitem id="menu_social" 
+              name="Social" 
+              parent="menu_ecosphere_root" 
+              sequence="20"/>
+              
+    <menuitem id="menu_governance" 
+              name="Governance" 
+              parent="menu_ecosphere_root" 
+              sequence="30"/>
+              
+    <menuitem id="menu_gamification" 
+              name="Gamification" 
+              parent="menu_ecosphere_root" 
+              sequence="40"/>
+              
+    <!-- Standard Odoo practice: Put settings/reference tables in a Config menu -->
+    <menuitem id="menu_configuration" 
+              name="Configuration" 
+              parent="menu_ecosphere_root" 
+              sequence="100"/>
+</odoo>

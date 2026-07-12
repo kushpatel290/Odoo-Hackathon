@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 1. ACTION: Link to the Gamification Challenge model -->
+    <record id="action_gamification_challenge" model="ir.actions.act_window">
+        <field name="name">Challenges</field>
+        <field name="res_model">ecosphere.gamification.challenge</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- 2. MENU ITEM: Place it under the 'Gamification' top menu -->
+    <menuitem id="menu_gamification_challenge" 
+              name="Challenges" 
+              parent="menu_gamification" 
+              action="action_gamification_challenge" 
+              sequence="10"/>
+
+    <!-- 3. TREE VIEW -->
+    <record id="view_gamification_challenge_tree" model="ir.ui.view">
+        <field name="name">ecosphere.gamification.challenge.tree</field>
+        <field name="res_model">ecosphere.gamification.challenge</field>
+        <field name="arch" type="xml">
+            <tree string="Challenges">
+                <field name="name"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="reward_points"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 4. FORM VIEW -->
+    <record id="view_gamification_challenge_form" model="ir.ui.view">
+        <field name="name">ecosphere.gamification.challenge.form</field>
+        <field name="res_model">ecosphere.gamification.challenge</field>
+        <field name="arch" type="xml">
+            <form string="Challenge">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="reward_points"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

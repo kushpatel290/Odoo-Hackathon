@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 1. ACTION: Link to the CSR Participation model -->
+    <record id="action_csr_participation" model="ir.actions.act_window">
+        <field name="name">CSR Participation</field>
+        <field name="res_model">ecosphere.csr.participation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- 2. MENU ITEM: Place it under the 'Social' top menu -->
+    <menuitem id="menu_csr_participation" 
+              name="CSR Activities" 
+              parent="menu_social" 
+              action="action_csr_participation" 
+              sequence="10"/>
+
+    <!-- 3. TREE VIEW: A clean list of employee participation -->
+    <record id="view_csr_participation_tree" model="odoo.ui.view">
+        <field name="name">ecosphere.csr.participation.tree</field>
+        <field name="res_model">ecosphere.csr.participation</field>
+        <field name="arch" type="xml">
+            <tree string="CSR Activities">
+                <field name="employee_id"/>
+                <field name="activity_name"/>
+                <field name="category_id"/>
+                <field name="points_earned"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 4. FORM VIEW: For detailed review -->
+    <record id="view_csr_participation_form" model="odoo.ui.view">
+        <field name="name">ecosphere.csr.participation.form</field>
+        <field name="res_model">ecosphere.csr.participation</field>
+        <field name="arch" type="xml">
+            <form string="CSR Participation">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,under_review,approved"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="employee_id"/>
+                            <field name="activity_name"/>
+                        </group>
+                        <group>
+                            <field name="category_id"/>
+                            <field name="points_earned"/>
+                        </group>
+                    </group>
+                    <field name="proof_file" filename="proof_file"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

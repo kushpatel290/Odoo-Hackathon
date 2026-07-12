@@ -1,84 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
 <record id="action_governance" model="ir.actions.act_window">
-
     <field name="name">Governance Data</field>
     <field name="res_model">ecosphere.governance</field>
     <field name="view_mode">tree,form</field>
-
 </record>
-
 
 <menuitem id="menu_governance_data"
           name="Governance Data"
           parent="menu_governance"
           action="action_governance"/>
 
-
-
 <record id="view_governance_tree" model="ir.ui.view">
-
 <field name="name">ecosphere.governance.tree</field>
-
-<field name="res_model">ecosphere.governance</field>
-
-
+<field name="model">ecosphere.governance</field>
 <field name="arch" type="xml">
-
-<list>
-
+<tree>
 <field name="organization_name"/>
 <field name="board_members"/>
 <field name="independent_directors"/>
 <field name="compliance_score"/>
-
-</list>
-
+</tree>
 </field>
-
-
 </record>
 
-
-
 <record id="view_governance_form" model="ir.ui.view">
-
 <field name="name">ecosphere.governance.form</field>
-
-<field name="res_model">ecosphere.governance</field>
-
-
+<field name="model">ecosphere.governance</field>
 <field name="arch" type="xml">
-
 <form>
-
 <sheet>
-
 <group>
-
 <field name="organization_name"/>
 <field name="board_members"/>
 <field name="independent_directors"/>
 <field name="anti_corruption_policy"/>
 <field name="whistleblower_policy"/>
 <field name="compliance_score"/>
-
 </group>
-
-
 <field name="remarks"/>
-
-
 </sheet>
-
 </form>
-
 </field>
-
-
 </record>
-
 
 </odoo>

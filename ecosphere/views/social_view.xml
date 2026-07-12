@@ -1,66 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <!-- Action -->
     <record id="action_social" model="ir.actions.act_window">
         <field name="name">Social Activities</field>
         <field name="res_model">ecosphere.social</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-
-    <!-- Menu -->
     <menuitem id="menu_social_activity"
               name="Social Activities"
               parent="menu_social"
               action="action_social"
               sequence="10"/>
 
-
-    <!-- Tree View -->
     <record id="view_social_tree" model="ir.ui.view">
         <field name="name">ecosphere.social.tree</field>
         <field name="model">ecosphere.social</field>
-
         <field name="arch" type="xml">
-            <list string="Social Activities">
-                <field name="name"/>
-                <field name="employee_name"/>
-                <field name="activity_type"/>
-                <field name="points"/>
-            </list>
+            <tree string="Social Activities">
+                <field name="organization_name"/>
+                <field name="total_employees"/>
+                <field name="female_employees"/>
+                <field name="training_hours"/>
+                <field name="volunteer_hours"/>
+                <field name="employee_satisfaction"/>
+            </tree>
         </field>
-
     </record>
 
-
-    <!-- Form View -->
     <record id="view_social_form" model="ir.ui.view">
-
         <field name="name">ecosphere.social.form</field>
         <field name="model">ecosphere.social</field>
-
         <field name="arch" type="xml">
-
             <form string="Social Activity">
-
                 <sheet>
-
                     <group>
-                        <field name="name"/>
-                        <field name="employee_name"/>
-                        <field name="activity_type"/>
-                        <field name="points"/>
-                        <field name="description"/>
+                        <field name="organization_name"/>
+                        <field name="total_employees"/>
+                        <field name="female_employees"/>
+                        <field name="training_hours"/>
+                        <field name="volunteer_hours"/>
+                        <field name="employee_satisfaction"/>
                     </group>
-
+                    <field name="remarks"/>
                 </sheet>
-
             </form>
-
         </field>
-
     </record>
-
 
 </odoo>

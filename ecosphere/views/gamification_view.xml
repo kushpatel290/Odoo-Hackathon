@@ -7,33 +7,26 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-
     <menuitem id="menu_badge"
               name="Badges"
               parent="menu_gamification"
               action="action_badge"/>
 
-
     <record id="view_badge_tree" model="ir.ui.view">
         <field name="name">ecosphere.badge.tree</field>
-        <field name="res_model">ecosphere.badge</field>
-
+        <field name="model">ecosphere.badge</field>
         <field name="arch" type="xml">
-            <list>
+            <tree>
                 <field name="name"/>
                 <field name="unlock_rule"/>
-            </list>
+            </tree>
         </field>
-
     </record>
-
 
     <record id="view_badge_form" model="ir.ui.view">
         <field name="name">ecosphere.badge.form</field>
-        <field name="res_model">ecosphere.badge</field>
-
+        <field name="model">ecosphere.badge</field>
         <field name="arch" type="xml">
-
             <form>
                 <sheet>
                     <group>
@@ -44,12 +37,8 @@
                     </group>
                 </sheet>
             </form>
-
         </field>
-
     </record>
-
-
 
     <record id="action_reward" model="ir.actions.act_window">
         <field name="name">Rewards</field>
@@ -57,11 +46,9 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-
     <menuitem id="menu_reward"
               name="Rewards"
               parent="menu_gamification"
               action="action_reward"/>
-
 
 </odoo>

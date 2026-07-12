@@ -7,57 +7,46 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-
     <menuitem id="menu_environmental_data"
               name="Environmental Data"
               parent="menu_environmental"
               action="action_environmental"
               sequence="10"/>
 
-
     <record id="view_environmental_tree" model="ir.ui.view">
         <field name="name">ecosphere.environmental.tree</field>
-        <field name="res_model">ecosphere.environmental</field>
+        <field name="model">ecosphere.environmental</field>
         <field name="arch" type="xml">
-
-            <list string="Environmental Data">
+            <tree string="Environmental Data">
                 <field name="organization_name"/>
                 <field name="electricity_usage"/>
                 <field name="water_usage"/>
                 <field name="carbon_emission"/>
                 <field name="waste_generated"/>
                 <field name="reporting_year"/>
-            </list>
-
+            </tree>
         </field>
     </record>
 
-
     <record id="view_environmental_form" model="ir.ui.view">
         <field name="name">ecosphere.environmental.form</field>
-        <field name="res_model">ecosphere.environmental</field>
+        <field name="model">ecosphere.environmental</field>
         <field name="arch" type="xml">
-
             <form string="Environmental Data">
                 <sheet>
-
                     <group>
                         <field name="organization_name"/>
                         <field name="reporting_year"/>
                     </group>
-
                     <group>
                         <field name="electricity_usage"/>
                         <field name="water_usage"/>
                         <field name="carbon_emission"/>
                         <field name="waste_generated"/>
                     </group>
-
                     <field name="remarks"/>
-
                 </sheet>
             </form>
-
         </field>
     </record>
 

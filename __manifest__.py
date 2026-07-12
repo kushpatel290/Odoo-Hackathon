@@ -13,7 +13,7 @@
     'depends': ['base', 'mail'], 
     'data': [
         'security/ir.model.access.csv',  
-        # 'views/organization_views.xml',  # Placeholders for Phase 4 UI work
+        # 'views/organization_vieAws.xml',  # Placeholders for Phase 4 UI work
     ],
     'installable': True,
     'application': True,
